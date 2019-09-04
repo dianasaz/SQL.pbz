@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="@localhost">
+<dataSource name="mydatabase@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.14">
     <root id="1">
       <ServerVersion>5.5.23</ServerVersion>
@@ -12,6 +12,7 @@
       <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="3" parent="1" name="mydatabase">
+      <Current>1</Current>
       <Visible>1</Visible>
       <Collation>utf8_general_ci</Collation>
     </schema>
@@ -864,7 +865,7 @@
       <ColNames>subject_id</ColNames>
       <RefSchemaName>mydatabase</RefSchemaName>
       <RefTableName>subject</RefTableName>
-      <RefColNames>subject_id</RefColNames>
+      <RefColNames>subject_identity</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
@@ -872,7 +873,7 @@
       <ColNames>teacher_id</ColNames>
       <RefSchemaName>mydatabase</RefSchemaName>
       <RefTableName>teacher</RefTableName>
-      <RefColNames>teacher_id</RefColNames>
+      <RefColNames>teacher_identity</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
@@ -911,7 +912,7 @@
       <ColNames>number_group</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="224" parent="206" name="subject_id">
+    <column id="224" parent="206" name="subject_identity">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
@@ -943,10 +944,10 @@
     </column>
     <key id="229" parent="206" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>subject_id</ColNames>
+      <ColNames>subject_identity</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="230" parent="207" name="teacher_id">
+    <column id="230" parent="207" name="teacher_identity">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
@@ -989,7 +990,7 @@
     </index>
     <key id="237" parent="207" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>teacher_id</ColNames>
+      <ColNames>teacher_identity</ColNames>
       <Primary>1</Primary>
     </key>
     <key id="238" parent="207" name="phone">

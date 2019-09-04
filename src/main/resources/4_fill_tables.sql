@@ -1,6 +1,6 @@
 use mydatabase;
 
-INSERT INTO `teacher` (`teacher_id`,
+INSERT INTO `teacher` (`teacher_identity`,
                        `surname`,
                        `position`,
                        `kafedra`,
@@ -37,7 +37,7 @@ VALUES ('221Л',
         'Международная экономика',
         324);
 
-INSERT INTO `subject` (`subject_id`,
+INSERT INTO `subject` (`subject_identity`,
                        `name`,
                        `hours`,
                        `specialization`,

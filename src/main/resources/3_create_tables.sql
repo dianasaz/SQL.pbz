@@ -2,7 +2,7 @@ use myDatabase;
 
 CREATE TABLE `teacher`
 (
-  `teacher_id`     varchar(255) PRIMARY KEY NOT NULL,
+  `teacher_identity`     varchar(255) PRIMARY KEY NOT NULL,
   `surname`        varchar(255)             NOT NULL,
   `position`       varchar(255)             NOT NULL,
   `kafedra`        varchar(255)             NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE `teacher`
 
 CREATE TABLE `subject`
 (
-  `subject_id`     varchar(255) PRIMARY KEY NOT NULL,
+  `subject_identity`     varchar(255) PRIMARY KEY NOT NULL,
   `name`           varchar(255)             NOT NULL,
   `hours`          int                      NOT NULL,
   `specialization` varchar(255)             NOT NULL,
@@ -42,11 +42,11 @@ ALTER TABLE `references`
     ON DELETE CASCADE;
 
 ALTER TABLE `references`
-  ADD FOREIGN KEY (`subject_id`) REFERENCES `subject` (`subject_id`)
+  ADD FOREIGN KEY (`subject_id`) REFERENCES `subject` (`subject_identity`)
     ON UPDATE CASCADE
     ON DELETE CASCADE;
 
 ALTER TABLE `references`
-  ADD FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`teacher_id`)
+  ADD FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`teacher_identity`)
     ON UPDATE CASCADE
     ON DELETE CASCADE;
